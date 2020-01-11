@@ -1,1 +1,22 @@
-this is my test file
+pipeline {
+
+agent any
+
+stages{
+  stage('checkout'){
+    steps{
+    
+    git url: ""
+    
+    }
+  
+  }
+  stage('Terraform inti') {
+      steps {
+        bat "${env.WORKSPACE}/terraform init"
+      }
+    }
+
+}
+
+}
