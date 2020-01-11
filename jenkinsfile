@@ -6,14 +6,20 @@ stages{
   stage('checkout'){
     steps{
     
-    "git clone https://github.com/krishna538/deployArtifact.git"
+    git credentialsId: '0f1f7662-803c-4d9f-b916-437f13213a06', url: 'https://github.com/krishna538/deployArtifact.git'
     
     }
   
   }
-  stage('Terraform inti') {
+  stage('Terraform init') {
       steps {
-        bat "${env.WORKSPACE}/terraform init"
+        bat "terraform init"
+      }
+    }
+    
+    stage('Terraform apply') {
+      steps {
+        bat "terraform apply -auto-approve"
       }
     }
 
