@@ -19,7 +19,7 @@ stages{
     
     stage('Terraform apply') {
       steps {
-        bat "terraform apply -auto-approve target=ec2_creation"
+        bat "terraform apply -auto-approve target=ec2_creation.tf"
       }
     }
 
