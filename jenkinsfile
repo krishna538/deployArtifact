@@ -6,7 +6,7 @@ stages{
   stage('checkout'){
     steps{
     
-    git url: ""
+    git url: "https://github.com/krishna538/deployArtifact.git"
     
     }
   
