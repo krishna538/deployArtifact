@@ -1,0 +1,15 @@
+provider "aws" {
+  region = "ap-south-1"
+  access_key = "AKIAXENY7ZOYCLZBJ6EI"
+  secret_key = "v1k2tYn8Ev9ctMxW4ztbXZ3IuAmVlBoYrka4/NIb"
+
+}
+
+resource "aws_ebs_volume" "example" {
+  availability_zone = "ap-south-1a"
+  size              = 40
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
